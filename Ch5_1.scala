@@ -35,7 +35,12 @@ object Ch5_1 {
     StructField(count,LongType,true))
     */
 
-    
+    val df3 = spark.read.format("json")
+      .load("data/flight-data/json/2015-summary.json")
 
+    println(df3.first())
+    /*
+    [United States,Romania,15]
+     */
   }
 }
